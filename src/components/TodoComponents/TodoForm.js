@@ -4,8 +4,8 @@ const TodoForm = props => {
   return(
     <div>
     <form name="addTodo">
-      <input name="todo" placeholder="...todo" />
-      <button name="addTodo">Add Todo</button>
+      <input type="text" name="todo" placeholder="...todo" />
+      <button onClick={props.addTodoHandler}>Add Todo</button>
       <button name="clear">Clear Completed</button>
     </form>
     </div>

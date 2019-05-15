@@ -23,11 +23,16 @@ class App extends React.Component {
     }
   }
 
+  addTodoHandler(event) {
+    event.preventDefault();
+    console.log('Add todo', event.target);
+  }
+
   render() {
     return (
       <div>
         <TodoList todos={this.state.todos} />
-        <TodoForm />
+        <TodoForm addTodoHandler={this.addTodoHandler} />
       </div>
     );
   }
