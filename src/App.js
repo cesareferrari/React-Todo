@@ -34,7 +34,8 @@ class App extends React.Component {
     }
 
     this.setState({
-      todos: [...this.state.todos, newTodo]
+      todos: [...this.state.todos, newTodo],
+      todoTask: ''
     })
 
 
@@ -51,7 +52,11 @@ class App extends React.Component {
     return (
       <div>
         <TodoList todos={this.state.todos} />
-        <TodoForm changeHandler={this.changeHandler} addTodoHandler={this.addTodoHandler} />
+        <TodoForm
+          changeHandler={this.changeHandler}
+          addTodoHandler={this.addTodoHandler} 
+          todoTask={this.state.todoTask}
+        />
       </div>
     );
   }
