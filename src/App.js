@@ -19,7 +19,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: todos
+      todos: todos,
+      todoTask: ''
     }
   }
 
@@ -27,7 +28,7 @@ class App extends React.Component {
     event.preventDefault();
 
     let newTodo = {
-      task: 'New todo added from the form',
+      task: this.state.todoTask,
       id: new Date().getTime(),
       completed: false
     }
@@ -40,11 +41,17 @@ class App extends React.Component {
     console.log('Add todo', event.target);
   }
 
+  changeHandler = event => {
+    console.log('Target name:', event.target.name);
+    console.log('Target value', event.target.value);
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
   render() {
     return (
       <div>
         <TodoList todos={this.state.todos} />
-        <TodoForm addTodoHandler={this.addTodoHandler} />
+        <TodoForm changeHandler={this.changeHandler} addTodoHandler={this.addTodoHandler} />
       </div>
     );
   }
