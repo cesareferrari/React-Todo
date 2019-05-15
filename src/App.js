@@ -23,8 +23,20 @@ class App extends React.Component {
     }
   }
 
-  addTodoHandler(event) {
+  addTodoHandler = event => {
     event.preventDefault();
+
+    let newTodo = {
+      task: 'New todo added from the form',
+      id: new Date().getTime(),
+      completed: false
+    }
+
+    this.setState({
+      todos: [...this.state.todos, newTodo]
+    })
+
+
     console.log('Add todo', event.target);
   }
 

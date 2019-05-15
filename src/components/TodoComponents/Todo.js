@@ -2,7 +2,7 @@ import React from 'react'
 
 const Todo = props => {
   return (
-    <div className="task">
+    <div id={props.key} className="task">
       {props.task}
     </div>
   )
