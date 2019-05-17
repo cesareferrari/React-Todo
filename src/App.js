@@ -31,7 +31,7 @@ class App extends React.Component {
     if(this.state.todoTask) {
       let newTodo = {
         task: this.state.todoTask,
-        id: new Date().getTime(),
+        id: Date.now(),
         completed: false
       }
 
