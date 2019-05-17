@@ -12,7 +12,8 @@ const TodoForm = props => {
         placeholder="...todo" />
 
       <button onClick={props.addTodoHandler}>Add Todo</button>
-      <button name="clear">Clear Completed</button>
+
+      <button onClick={props.clearCompleted}>Clear Completed</button>
     </form>
     </div>
   )
