@@ -18,11 +18,13 @@ input[type="text"] {
 }
 
 button {
-  font-size: 2.0rem;
-  padding: 3px 10px;
+  font-size: 1.6rem;
+  padding: 4px 20px;
   background-color: #0E99E2;
   color: white;
   border-radius: 8px;
+  text-transform: uppercase;
+  line-spacing: 1px;
 }
 
 button:focus { outline: 0; }
