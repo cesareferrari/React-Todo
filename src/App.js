@@ -28,16 +28,18 @@ class App extends React.Component {
   addTodoHandler = event => {
     event.preventDefault();
 
-    let newTodo = {
-      task: this.state.todoTask,
-      id: new Date().getTime(),
-      completed: false
-    }
+    if(this.state.todoTask) {
+      let newTodo = {
+        task: this.state.todoTask,
+        id: new Date().getTime(),
+        completed: false
+      }
 
-    this.setState({
-      todos: [...this.state.todos, newTodo],
-      todoTask: ''
-    })
+      this.setState({
+        todos: [...this.state.todos, newTodo],
+        todoTask: ''
+      })
+    }
   }
 
   changeHandler = event => {
