@@ -37,21 +37,35 @@ class App extends React.Component {
       todos: [...this.state.todos, newTodo],
       todoTask: ''
     })
-
-
-    console.log('Add todo', event.target);
   }
 
   changeHandler = event => {
-    console.log('Target name:', event.target.name);
-    console.log('Target value', event.target.value);
     this.setState({ [event.target.name]: event.target.value });
   }
+
+  toggleTodo = todoId => {
+    // console.log('todoId: ', todoId);
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todoId === todo.id) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          };
+        }
+        return todo;
+      })
+    });
+  };
 
   render() {
     return (
       <div>
-        <TodoList todos={this.state.todos} />
+        <TodoList
+          todos={this.state.todos}
+          toggleTodo={this.toggleTodo}
+        />
+
         <TodoForm
           changeHandler={this.changeHandler}
           addTodoHandler={this.addTodoHandler} 
