@@ -1,0 +1,19 @@
+.task {
+  background-color: white;
+  font-size: 2.2rem;
+  font-weight: 300;
+  padding: 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid white;
+}
+
+.task:hover {
+  background-color: #F8F6CD;
+}
+
+.completed {
+  text-decoration: line-through;
+  background-color: #E9F7DD;
+  border: 1px solid #C3E1A9;
+}
